@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="./style.css"> <!-- [./]-estou referenciando o meu diretorio raiz -->
+   
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,400;0,700;1,100;1,400;1,700&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+    <!-- Cabeçalho -->
+    <header>
+        <!-- <h1 id="logo">dev.finance$</h1> -->
+        <img src="./assets/logo.svg" alt="Logo Dev Fiance"></header><img>
+    </header>
+
+    <!-- Conteundo Principal -->
+    <main class="container"> <!-- Class global container---->
+        <!-- Sessão Balanço -->
+        <section id="balance">
+            <h2 class="sr-only">Balanço</h2>
+
+            <div class="card"><!--  caixa card -->
+                <h3>
+                    <span> Entradas</span> <!--Span- mantenho meus elementos em linha na caixa card.  -->
+                    <img src="./assets/income.svg" alt="Entradas">
+                </h3>
+                <p>R$ 5.000,00</p>
+            </div>
+
+            <div class="card">
+                <h3>
+                    <span> Saídas</span> <!--Span- mantenho meus elementos em linha na caixa card.  -->
+                    <img src="./assets/expense.svg" alt="Entradas">
+                </h3>
+                <p>R$ 2.000,00</p>
+            </div>
+            
+            <div class="card total">
+                <h3>
+                    <span>Total</span> <!--Span- mantenho meus elementos em linha na caixa card.  -->
+                    <img src="./assets/total.svg" alt="Entradas">
+                </h3>
+                <p>R$ 3.000,00</p>
+            </div> 
+
+        </section>
+
+        <!-- Sessão Entradas -->
+        <section id="transaction">
+            <h2 class="sr-only">Transações</h2> <!-- Section -Geralmente é seguida de um Chield - H2 -->
+            
+            <a href="#" 
+             onclick="Modal.open()" 
+            class="button new">+ Nova Transação</a> <!-- [a.button.new] Atalho para criar botão + classe-->
+            
+            <table id="data-table">
+                <thead>
+                    <tr>
+                        <th>Descrição</th>
+                        <th>Valor</th>
+                        <th>Data</th>
+                        <th></th>
+                    </tr>
+                <tbody>
+                    <tr>
+                        <!-- Categorizei as [TD] - para criar eventos CSS, de cores - linhas x campos -->
+                        <td class="description">Luz</td>
+                        <td class="expense">- R$ 500,00</td> <!-- class- expense- Gastos -->
+                        <td class="date">23/01/2021</td>
+                        <td>
+                            <img src="./assets/minus.svg" alt="Remover Transação">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="description">Criação WebSite</td>
+                        <td class="icome"> R$ 5000,00</td> <!-- class-icome- Ganhos-->
+                        <td class="date">23/01/2021</td>
+                        <td>
+                            <img src="./assets/minus.svg" alt="Remover Transação">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="description">Internet</td>
+                        <td class="expense">- R$ 200,00</td>
+                        <td class="date">23/01/2021</td>
+                        <td>
+                            <img src="./assets/minus.svg" alt="Remover Transação">
+                        </td>
+                    </tr>
+                </tbody>
+
+                </thead>
+            </table>
+        </section>
+
+    </main>
+
+     <!-- Tela Modal --> 
+    <div class="modal-overlay"> <!-- caixa transparente --> 
+         <div class="modal"> <!-- caixa branca - form --> 
+             <div id="form">
+                 <h2>Nova Transação</h2>
+                 <form action="">
+                     <div class="input-group">
+                         <label class="sr-only"
+                                for="description">Descrição</label>
+                         <input type="text" 
+                                id="description" 
+                                name="description"
+                                placeholder="Descrição"/>
+                     </div>
+
+                       <div class="input-group">
+                        <label 
+                            class="sr-only"
+                            for="amount">Valor</label>
+                        <input 
+                            type="number" 
+                            step="0.01" 
+                            id="amount" 
+                            name="amount"
+                            placeholder="0,00"/> <!--step-[defino - formato de seletor valores --> 
+                         <small>Use o sinal -(negativo) para despesas e , (vírgula) para casas decimais</small>
+                        </div>
+
+                       <div class="input-group">
+                         <label class="sr-only"
+                                for="date">Data</label>
+                         <input type="date" 
+                                id="date" 
+                                name="date"/>
+                       </div>
+                     
+                     <div class="input-group actions">
+                         <a 
+                         onclick="Modal.close()"
+                         href="#" class="button cancel">Cancelar</a>
+                         <button>Salvar</button>
+                     </div>
+
+                 </form>
+             </div>
+         </div>
+
+    </div>
+
+    <!-- Rodape -->
+    <footer><p>dev.finance$</p></footer>
+
+<script>
+ const Modal ={ //[const Modal] - variavel constant- não muda futuramente [ Let Modal] - variavel que pode mudar
+      open(){
+          //Abrir modal
+          //Adicionar a class active ao modal
+          document //busco em todo documento HTML
+          .querySelector('.modal-overlay') //  passando argumento classe="modal-overlay" devolve a referencia <div> de objetos.
+          .classList // classList - a propriedade para listar objetos da lista . 
+          .add('active') //[add ]-calsse(active), onde adiciono da minha lista de classes do modal overlay que entra no documento html.
+          
+         //Testar função                        
+          //alert('Abrir o modal') // [alert]- para testar exe fuction modal,['']-incluo argumento a minha funcionalidade
+      },
+      close(){
+          //fechar o modal
+          // remover a class active do madal
+          document //busco em todo documento HTML
+          .querySelector('.modal-overlay') //  passando argumento classe="modal-overlay" devolve a referencia <div> de objetos.
+          .classList // classList - a propriedade para listar objetos da lista . 
+          .remove('active') //[remove]-calsse(active), onde removo da minha lista de classes do modal overlay que entra no documento html.
+          
+      }
+    }
+</script>
+
+</body>
+
+</html>

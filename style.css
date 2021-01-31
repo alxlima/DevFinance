@@ -1,0 +1,318 @@
+
+/* Global ===================== */
+:root { /*Seletor de referencia raiz do html*/
+    --dark-blue: #363f5f; /*Var - Cor*/
+    --green: #49aa26;
+    --light-green: #3dd705;
+    --red: #e92929;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html { 
+    font-size: 93.75;/*tamanho padrão- Mobal [93.75]-Mesmo que 15px - 100% fonte(navegador) = 16px*/
+}
+body{
+    background: #f0f2f5;
+    font-family: 'Poppins', sans-serif; /*Poppins- 100-400-700 -link:fonts.google.com*/
+}
+
+.sr-only { /* csstrik - deixo os textos ( Balance e Transaction) posicionados ao leitores de tela, porem invisiveis ao olhos na pagina*/
+    position: absolute;
+    width: 1px;  
+    height:1px; 
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+    border-width: 0;  
+}
+
+.container {
+   /* width: 300px; /*modelo padrão de tamanhoa*/
+    width: min(90vw, 800px); /*Argumento que busco o menor valor*/
+    margin: auto; /*Margin- Espaços lateriais, auto - balancear espaços*/
+}
+
+/* titles ======================= */
+h2 {
+    margin-top: 3.2rem;
+    margin-bottom: 0.8rem;
+    /* color: #363f5f; */
+    color: var(--dark-blue);
+
+    font-weight: normal;
+}
+
+/* link & Buttons ======================= */
+a {
+   color: var(--green);
+   text-decoration: none; /*Removo a linha underline do link*/
+}
+
+a:hover { /*[:hover]- seletor de movimento*/
+    color: #3dd705;
+}
+
+button {
+   width: 100%;
+   height: 50px;
+
+   border: none;
+   color: white;
+   background: var(--green);
+
+   padding: 0;
+   border-radius: 0.25rem;
+   cursor: pointer;
+}
+
+button:hover {
+    background: var(--light-green);
+}
+
+.button.new { 
+    display: inline-block;
+    margin-bottom: .8rem; /*Inclui espacamento de margem abaixo do buttom x table*/
+ 
+}
+
+.button.cancel {
+    color: var(--red);
+    border: 2px var(--red) solid;
+    border-radius: 0.25rem;
+
+    height: 50px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    opacity: 0.6;
+}
+
+.button.cancel:hover {
+    opacity: 1;
+}
+
+
+/* Header ======================= */
+header {
+   background: #2d4a22;
+   /*padding: 2rem 2rem 6rem 6rem; *//*[2]-topo , [2]-abaixo, [6]-Rigth, [6]-Lefth */
+   padding: 2rem 0 10rem; /*[2] para topo, laterais = 0, [10] embaixo quando texto fica ao centro*/
+   text-align: center;
+}
+
+#logo {
+  color: #fff;
+  font-weight: 100;
+}
+
+/* Balance =======================*/
+#balance {
+    margin-top: -8rem;
+}
+
+#balance h2 {
+    color: white;
+    margin-top:0;
+}
+
+/* Cards ======================== */
+.card {
+   background: white;
+   padding: 1.5rem 2rem ;    
+   border-radius: 0.25rem;
+   
+   margin-bottom: 2rem; /*Espaçamento entre os cards*/
+
+   color: var(--dark-blue);
+}
+
+.card h3 {
+   font-weight: normal;
+   font-size: 1rem;
+
+   display: flex; /*Mudo o comportamento dos elementros internos a caixa*/
+   align-items:center;
+   justify-content: space-between; /*Incluo espaco entre os elementos internos da caixa*/;
+}
+
+.card p {
+   font-size: 2rem;
+   line-height: 3rem; /*[line-heifht], separador entre linhas do mesmo registro*/
+
+   margin-top: 1rem;
+}
+
+.card.total { /*[Card] 1°classe [total] 2° classe*/
+    background: var(--green);
+    color: white; /*Cores internas deixo branco.*/
+   
+}
+
+/* Table ======================== */
+#transaction {
+    display: block;/* disponho a largura da tabela.*/
+    width: 100%; /*Pego todo espaço 100% do meu container no Transaction que é a caixa que a table esta dentro*/
+    border-spacing: 0 0.5rem; /*[0]Removo todas as separação de bordas da tabela (Eixo-Vertical) [0.5] Eixo Horizontal- */
+    color: #969cb3;
+    overflow-x:auto; /*removo o excesso transbordo da table, inicio barra rolagem eixo= X*/
+}
+
+#data-table { 
+   width: 100%; /*Pego todo espaço 100% do meu container no Transaction que é a caixa que a table esta dentro*/
+   border-spacing: 0 0.5rem; /*[0]Removo todas as separação de bordas da tabela (Eixo-Vertical) [0.5] Eixo Horizontal- */
+   color: #969cb3;
+}
+
+
+table thead tr th:first-child, /*Tr th:firts-child - Seletor que busco 1° filho th (interno no thead)*/
+table tbody tr td:first-child /*Tr td:firts-child - Seletor que busco 1° filho td (interno no thead)*/
+{  
+    border-radius: 0.25rem 0 0 0.25rem; 
+}
+
+table thead tr th:last-child, /*Tr th:firts-child - Seletor que busco 1° filho th (interno no thead)*/
+table tbody tr td:last-child {
+    border-radius: 0 0.25rem 0.25rem 0; 
+}
+
+table thead th { /*incluo somente nos Th(Colunas) da tabela*/
+    background: white;
+    /* opacity: 0.6;  Deixo as colunas com um opacidade de 0.6 */
+    font-weight: normal; /*suaviso a fonte , trazendo leveza*/
+    padding: 1rem 2rem; /*preencimento de [1rem]em cima e em baixo, [2rem] nas laterais*/
+    
+    text-align: left;
+}
+
+table tbody tr {
+    opacity: 0.7; /*fixo uma opacidade 0.7 na TR (linha) da tabela*/
+}
+
+table tr:hover {  /*[:hover]- seletor de movimento*/
+     opacity: 1; /*inclui no movimento do mause opacidade 1 na TR (linha) da tabela*/
+     /* cursor: pointer; */
+}
+
+
+table tbody td { /*incluo somente nos TD ( valores) da  tabela*/
+    background: white;        
+    padding: 1rem 2rem;
+    /* font-weight: normal; */
+}
+
+td.description {  /* Incluo Cor para registros na TD-coluna Descrição*/
+    color: var(--dark-blue);
+}
+
+td.icome {
+    color: #12a454;
+}
+
+td.expense {
+    color :#e92929;
+}
+
+/* Modal ======================== */
+.modal-overlay { /*caixa principal transparente */ 
+    width: 100%;
+    height: 100%;
+    
+    background-color: rgba(0, 0, 0, 0.7); /*cor alpha-transparente*/
+
+    position: fixed; /*fixo a possição da tela*/
+    top: 0;/*posicion 0 do top da pagina*/
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    opacity: 0; /* mantenho caixa transparente, porem ocupa o spaço da tela */
+    visibility: hidden; /*escondo a caixa e espaço da tela */
+
+    z-index: 999; /*z-index: --ajusta a posição que conflitou com outro elemento na pagina.*/
+                  /*o label footer, esta na mesma possição do botão cancelar, isso resolveu pois ajustei a position do modal*/
+}
+
+.modal-overlay.active { /*[class=Active]-Adicionei no html-[javaScript], para quando a ações de acesso da tela modal, forem ativas*/
+    opacity: 1; /*ajusta apresentação da tela e espaço*/
+    visibility: visible; /*deixo visivel a tela na pagina*/
+}
+
+.modal { /*caixa branca - form */ 
+    background: #f0f2f5;
+    padding: 2.4rem;
+    /* width: 90%; */
+    /* max-width: 500px; */
+
+    z-index: 1; /*z-index - ajusto a tela na possição de elemento de mesma possição mantendo o modal acima deles */
+}
+
+/* form  ======================== */
+#form {
+     max-width: 500px;
+}
+
+#form h2 {
+     margin-top:0;
+}
+
+input {
+  border: none;
+  border-radius: 0.2rem;
+
+  padding: 0.8rem;
+
+  width: 100%;
+}
+
+.input-group {
+    margin-top: 0.8rem;
+}
+
+.input-group small{
+    opacity: 0.4;
+}
+
+.input-group.actions {
+    display: flex; 
+    justify-content: space-between;
+    align-items: center;
+}
+
+ .input-group.actions .button,
+ .input-group.actions button {
+     width: 48%;
+ }
+
+/* Footer ======================== */
+footer {
+    text-align: center;
+    padding: 4rem 0 2rem;
+    color: var(--dark-blue);
+
+    opacity: 0.6;
+}
+
+/* Responsive ======================== */
+@media(min-width:800px) {
+    html{
+        font-size: 87.5%;/*16*/
+    }
+
+    #balance {
+        /* display: flex; --Posiciono os Cards, um ao lado do outro, para minimo deste tamanho */
+        display: grid;
+        grid-template-columns: repeat(3, 1fr); /*[1f] - 3 colunas com tamanho proporcionas ao tamanho total*/
+        gap: 2rem; /*adiciono espacos entre [1f]- colunas*/
+    }
+
+}
