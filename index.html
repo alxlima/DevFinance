@@ -31,7 +31,7 @@
                     <span> Entradas</span> <!--Span- mantenho meus elementos em linha na caixa card.  -->
                     <img src="./assets/income.svg" alt="Entradas">
                 </h3>
-                <p>R$ 5.000,00</p>
+                <p id="incomeDisplay">R$ 0,00</p>
             </div>
 
             <div class="card">
@@ -39,7 +39,7 @@
                     <span> Saídas</span> <!--Span- mantenho meus elementos em linha na caixa card.  -->
                     <img src="./assets/expense.svg" alt="Entradas">
                 </h3>
-                <p>R$ 2.000,00</p>
+                <p id="expenseDisplay">R$ 0,00</p>
             </div>
             
             <div class="card total">
@@ -47,7 +47,7 @@
                     <span>Total</span> <!--Span- mantenho meus elementos em linha na caixa card.  -->
                     <img src="./assets/total.svg" alt="Entradas">
                 </h3>
-                <p>R$ 3.000,00</p>
+                <p id="totalDisplay">R$ 0,00</p>
             </div> 
 
         </section>
@@ -69,31 +69,7 @@
                         <th></th>
                     </tr>
                 <tbody>
-                    <tr>
-                        <!-- Categorizei as [TD] - para criar eventos CSS, de cores - linhas x campos -->
-                        <td class="description">Luz</td>
-                        <td class="expense">- R$ 500,00</td> <!-- class- expense- Gastos -->
-                        <td class="date">23/01/2021</td>
-                        <td>
-                            <img src="./assets/minus.svg" alt="Remover Transação">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="description">Criação WebSite</td>
-                        <td class="icome"> R$ 5000,00</td> <!-- class-icome- Ganhos-->
-                        <td class="date">23/01/2021</td>
-                        <td>
-                            <img src="./assets/minus.svg" alt="Remover Transação">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="description">Internet</td>
-                        <td class="expense">- R$ 200,00</td>
-                        <td class="date">23/01/2021</td>
-                        <td>
-                            <img src="./assets/minus.svg" alt="Remover Transação">
-                        </td>
-                    </tr>
+                  
                 </tbody>
 
                 </thead>
@@ -107,7 +83,7 @@
          <div class="modal"> <!-- caixa branca - form --> 
              <div id="form">
                  <h2>Nova Transação</h2>
-                 <form action="">
+                 <form action="" onsubmit="Form.submit(event)"> <!-- onsubmit:liga o evento- exec. no js Form.submit --> 
                      <div class="input-group">
                          <label class="sr-only"
                                 for="description">Descrição</label>
@@ -127,7 +103,7 @@
                             id="amount" 
                             name="amount"
                             placeholder="0,00"/> <!--step-[defino - formato de seletor valores --> 
-                         <small>Use o sinal -(negativo) para despesas e , (vírgula) para casas decimais</small>
+                         <small class="help">Use o sinal -(negativo) para despesas e , (vírgula) para casas decimais</small>
                         </div>
 
                        <div class="input-group">
@@ -154,30 +130,7 @@
     <!-- Rodape -->
     <footer><p>dev.finance$</p></footer>
 
-<script>
- const Modal ={ //[const Modal] - variavel constant- não muda futuramente [ Let Modal] - variavel que pode mudar
-      open(){
-          //Abrir modal
-          //Adicionar a class active ao modal
-          document //busco em todo documento HTML
-          .querySelector('.modal-overlay') //  passando argumento classe="modal-overlay" devolve a referencia <div> de objetos.
-          .classList // classList - a propriedade para listar objetos da lista . 
-          .add('active') //[add ]-calsse(active), onde adiciono da minha lista de classes do modal overlay que entra no documento html.
-          
-         //Testar função                        
-          //alert('Abrir o modal') // [alert]- para testar exe fuction modal,['']-incluo argumento a minha funcionalidade
-      },
-      close(){
-          //fechar o modal
-          // remover a class active do madal
-          document //busco em todo documento HTML
-          .querySelector('.modal-overlay') //  passando argumento classe="modal-overlay" devolve a referencia <div> de objetos.
-          .classList // classList - a propriedade para listar objetos da lista . 
-          .remove('active') //[remove]-calsse(active), onde removo da minha lista de classes do modal overlay que entra no documento html.
-          
-      }
-    }
-</script>
+<script src='./scripts.js'> </script>
 
 </body>
 
