@@ -15,25 +15,17 @@
 
 <!---------- Badges ----------------->  
 <p align="center">
-  <!-- <img alt="Made by Alex Lima" src="https://img.shields.io/badge/made%20by-Alex Lima-%49AA26"/> -->
-
   <img src="https://img.shields.io/static/v1?label=made by&message=Alex Lima&color=49AA26&labelColor=000000" alt="Alex Lima" />
-  <!-- 
-  <img src="https://img.shields.io/static/v1?label=PRs&message=welcome&color=49AA26&labelColor=000000" alt="PRs welcome!" /> -->
 
   <img alt="Last commit" src="https://img.shields.io/static/v1?label=Last commit&message=Febr&color=49AA26&labelColor=000000">
-
-  <!-- <img alt="License" src="https://img.shields.io/badge/license-MIT-49AA26?style=flat-square"> -->
  
   <img alt="License" src="https://img.shields.io/static/v1?label=license&message=MIT&color=49AA26&labelColor=000000">
 
   <img alt="repo size" src="https://img.shields.io/static/v1?label=repo size&message=4.08 MB&color=49AA26&labelColor=000000">
-  <!-- <img alt="repo size" src="https://img.shields.io/badge/repo size-27.6-6E40C9?style=flat-square">  -->
   <!-- --(4953b8)--blueDark -->
   <!-- --(49AA26)--Green -->
   <!-- --(3292a6)--BlueMedium-->
  </p>
-
 <br>
 
 <!---------- showcase  ----------------->  
@@ -47,7 +39,6 @@
  </h5>
 
 <!----- Description ------------------>
-
 ## 🔖 Sobre
 &nbsp;&nbsp;&nbsp;&nbsp;Este Projeto faz parte de um evento do qual tive a oportunidade de participar, onde foi sugerido a **Maratona-Discovery** da Rocketseat, foi  uma maratona de estudos sobre Programação com foco em Desenvolvimento Web, onde o objetivo principal é mostrar como é simples desenvolver projetos web. Nesta edição desenvolveremos um projeto denominado dev.finance$, um site responsivo de controle financeiro.
 
@@ -66,14 +57,12 @@
 <br>
 
 <!----- Showcase Screens Shot------------------>
-
 ## 💻 **Telas**
 
 <div align="center">
-<img src="prints/00.gif" width="450px" height="auto">
-<br>
- <img src="prints/01.gif" width="450px" height="auto">
- <img src="prints/02.gif" width="450px" height="auto">
+  <img src="prints/00.gif" width="450px" height="auto">
+  <img src="prints/01.gif" width="450px" height="auto">
+  <img src="prints/02.gif" width="450px" height="auto">
 </div>
 <br>
 <br>
@@ -87,9 +76,10 @@
 <!----- Configurations ---------------------------->
 ## 🚀 **Tecnologias**
  
-- [HTML5](https://pt.wikipedia.org/wiki/HTML5) - Hyper Text Markup Language -linguagem de marcação de hipertexto.
-- [CSS3](https://pt.wikipedia.org/wiki/CSS3) - Cascading Style Sheets - estilização de código html.
+- [HTML5](https://pt.wikipedia.org/wiki/HTML5) - Hyper Text Markup Language - Linguagem de marcação de hipertexto.
+- [CSS3](https://pt.wikipedia.org/wiki/CSS3) - Cascading Style Sheets - Estilização de código html.
 - [Java Script](https://www.javascript.com/) -  Linguagem de programação utilizada em páginas web. Com o JS.
+- [Node.js](https://nodejs.org/en/) - Ambiente de execução Javascript server-side.
 - [VS Code](https://code.visualstudio.com/) - Editor de desenvolvimento de aplicações web.
 
 <br>
@@ -101,10 +91,13 @@
 <br>
 
 ## 📝 Licença
+<a href="https://opensource.org/licenses/MIT">
+    <img alt="License" src="https://img.shields.io/badge/license-MIT-6E40C9?style=flat-square">
+</a>
 
-&nbsp;&nbsp;&nbsp;&nbsp;Esse projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE.md) para mais detalhes.
+ &nbsp;&nbsp;&nbsp;&nbsp;Esse projeto está sob a licença MIT. Veja o arquivo [LICENSE](https://opensource.org/licenses/MIT) para mais detalhes.
 
-<br>
+ <br>
 
 ## 📁 Como Baixar o Projeto
 ```bash
